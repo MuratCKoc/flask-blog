@@ -1,0 +1,38 @@
+<!-- <h1>Transaction</h1>
+<form id="transactionForm" action="" method="post">
+   protect against CSRF attacks
+  {{ tranForm.hidden_tag() }}
+  <table>
+    <tr>
+    <td>
+    {{ tranForm.date.label }}<br>
+    {{ tranForm.date(class='datepicker', size=32) }}<br>
+    {% for error in tranForm.amount.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </td></tr>
+  <tr><td>
+    {{ tranForm.amount.label }}<br>
+    {{ tranForm.amount(size=32) }}<br>
+    {% for error in tranForm.amount.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </td></tr> -->
+
+  <tr><td>
+    {{ tranForm.type.label }}<br>
+    {{ tranForm.type(size=32) }}<br>
+    {% for error in tranForm.type.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </td></tr>
+  <tr><td>
+    {{ tranForm.note.label }}<br>
+    {{ tranForm.note(size=32) }}<br>
+    {% for error in tranForm.note.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </td></tr>
+
+  <tr><td> {{ tranForm.submitTran() }} </td></tr>
+</form>
