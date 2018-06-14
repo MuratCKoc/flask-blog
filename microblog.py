@@ -1,6 +1,8 @@
-from app import app
-from flask_script import Manager
-manager = Manager(app)
 
-if __name__ == '__main__':
-    manager.run()
+from app import app, db
+from app.models import User, Post
+
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Post': Post, 'Message': Message,
+            'Notification': Notification, 'Task': Task}
